@@ -1,0 +1,87 @@
+// P // This is a program to Merge two Sorted Arrays.
+// A // Basic Algorithm is to ask elements for two Arrays then merging both into third Array.
+
+// A // Firstly include the header files into our program.
+// P //
+#include <stdio.h>
+
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+int main(void) {
+    
+    // A // Initilizing three arrays, two to store user inputed elements and third will store the merged array.
+    // size_of_first, size_of_second - Number of elements in first and second array respectively.
+    // index - To be used as index while scanning input from user.
+    // i,j,k - To be used as index while merging for first,second and third array resp.
+    // P //
+    int first[50], second[50], merge[100], size_of_first, size_of_second,index,i=0, j=0, k=0;
+    
+    // A // Ask user for Size and elements for both arrays.
+    // P //
+    printf("\nEnter size of array A: ");
+    scanf("%d", &size_of_first);
+    printf("\nEnter sorted elements of array A:\n");
+    for(index = 0; index < size_of_first; index++)
+        scanf("%d", &first[index]);
+    
+    printf("\nEnter size of array B: ");
+    scanf("%d", &size_of_second);
+    printf("\nEnter sorted elements of array B:\n");
+    for(index =0; index < size_of_second; index++)
+        scanf("%d", &second[index]);
+    
+    // A // Looping through both the array using condition i<size_of_first (starting from i=0 to total elements in first array) AND j<size_of_second (starting from j=0 to total elements in second array)
+    // P //  while(i < size_of_first && j < size_of_second) { }
+    while(i < size_of_first && j < size_of_second)
+    {
+        // A // Inside WHILE loop, we will check if i'th element of first array is less than j'th element of second array. If YES, then put i'th element of first array i.e first[i] into merge array and Incrementing i.
+        // P //
+        if(first[i] < second[j])
+        {
+            merge[k] = first[i];
+            i++;
+        }
+        
+        // A // Else Block (If j'th element of second array is less than i'th element of first array), we will put the smaller one into merge array.
+        // P //
+        else {
+            merge[k] = second[j];
+            j++;
+        }
+        
+        // A // After the Else block we will increment k (acting as index for merge array)
+        // P //
+        k++;
+    }
+    
+    // A // Now we will check if our "Updated Index of First Array (i.e. i)" is greater or equal to size of first array, that means traversal of first array is completed now we have to insert elements of second array (if any) into merge array.
+    // P //
+    if(i >= size_of_first)
+        while(j<size_of_second)
+        {
+            merge[k] = second[j];
+            j++;
+            k++;
+        }
+    
+    // A // Now we will check if for our "Updated Index of Second Array (i.e. j)" is greater or equal to size of second array, that means traversal of second array is completed now we have to insert elements of first array (if any) into merge array.
+    // P //
+    if(j >= size_of_second)
+        while(i<size_of_first)
+        {
+            merge[k] = first[i];
+            i++;
+            k++;
+        }
+    
+    // A // At Last printing the elements of Merge array using Loop.
+    // P //
+    printf("\nAfter merging:\n");
+    for(index=0; index<size_of_first+size_of_second; index++)
+        printf("\n%d", merge[index]);
+    
+    return 0;
+}
+
+

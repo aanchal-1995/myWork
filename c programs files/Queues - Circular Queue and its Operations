@@ -1,0 +1,139 @@
+// P // This is a program to Create a Circular Queue using Array and performing Insertion and Deletion.
+// A // Basic Algorithm is to present a Menu for Insert, Delete and Display and asking user for input and performing accordingly.
+// Circular Queue - In this the last node is connected back to the first node to make a circle. Both the front and the rear pointers points to the beginning of the array
+
+
+// A // Firstly include the header files into our program. In this we will include one more header file "stdlib.h" because we have to use "exit" function and #define.
+#include <stdio.h>
+#include <stdlib.h>
+
+// Using Macro define SIZE as 5 this will be the maximum size of our queue.
+#define SIZE 5
+
+// Defining Prototypes of three functions i.e. Insert, Delete and Display.
+void insert();
+void delete();
+void display();
+
+// Declaring array of SIZE lenght, "rear" that will point towards the rear end of the queue and "front" that will point towards the front end of the queue, "data" is to store the value entered by user.
+int queue[SIZE];
+int rear= -1, front= -1, data;
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+int main(void) {
+    
+    // Declaring "ch" which will store the choice entered by user.
+    int ch;
+    
+    // Creating Loop which will present our menu and calling the desired functions.
+    do
+    {
+        printf("\n\n\n\n1.\tInsert\n2.\tDelete\n3.\tDisplay\n4.\tExit\n");
+        printf("\nEnter your choice: ");
+        scanf("%d", &ch);
+        switch(ch) {
+            case 1:
+                insert();
+                break;
+            case 2:
+                delete();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("\n\nInvalid entry. Please try again...\n");
+        }
+    } while(ch!=4);
+    
+    return 0;
+    
+}
+
+// Now coming out of Main function and defining insert() function to insert value in queue.
+void insert() {
+    
+    
+    // We will first check for the "rear", if it is equal to SIZE - 1 AND "front" equal to O OR "front" equal to "rear" + 1  that means our queue is already full.
+    // We have checked "rear" because Circular Queue uses First In First Out principle that means new data will be entered at the back of the queue.
+    // and other two condition to check for any vacant space in Circular Queue.
+    
+    if((front==0 && rear==SIZE-1) || (front==rear+1))
+        printf("\n\nQueue is full.");
+    
+    // If queue is not full then we will ask for the Data to be entered.
+    else {
+        
+        printf("\n\nEnter ITEM: ");
+        scanf("%d", &data);
+        
+        
+        // Inside Else block we  will check for Empty Queue, If "Rear" is equal to "-1" that means it is empty and we will increment both "front" and "rear" i.e. assigning Zero to both.
+        // Afterwards we will insert value to queue.
+        if(rear == -1)
+        {
+            rear = 0;
+            front = 0;
+        }
+        
+        // When queue is not empty then we will check for Queue that is filled from the Rear part but have space in the front. Then we will assign Zero to "rear" pointer that means inserting in the "front" end.
+        else if(rear == SIZE-1)
+            rear = 0;
+        
+        // If both the condition fails that means the queue is neither completely empty not completely filled from rear end then we just increment rear that will now point towards empty value.
+        else
+            rear++;
+        
+        // Now we will assign our data to queue with index "rear" and printing the inserted value.
+        queue[rear] = data;
+        
+        printf("\nData inserted = %d", data);
+    }
+
+}
+
+// After insert() now we will implement Delete operation. In this we have to remove the data which was inserted First time.
+void delete() {
+    
+    
+    // For deletion we will first check for the Empty queue. If "front" is equal to -2 that means queue is empty and we have nothing to delete.
+    if(front == -1)
+        printf("\n\nQueue is empty.");
+    
+    // Else we first assign data of "front" index of "queue" array to "data" variable to print that afterwards.
+    // Then if "front" is equal to "rear" that means we had only one element in the queue then we will assign -1 to both "front" and "rear".
+    else {
+        data = queue[front];
+        if (front == rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+        
+        // Else if : When we have a condition to delete last node of the queue i.e when "front" is equal to "size - 1" then just assign "0" to front to dereferece it.
+        // Else we will just increment "front" to dereference index and display deleted value.
+        else if(front == SIZE-1)
+            front = 0;
+        else
+            front++;
+        printf("\n\\Data Deleted = %d", data);
+    }
+
+}
+
+// Now for display() function we just have to traverse complete queue showing each value starting from the front.
+void display()
+{
+    // We will first check for the Empty Queue.
+    // Then if it is not empty we will loop through the Queue starting from "front" to "rear" displaying values.
+    if((front == -1) || (front==rear+1))
+        printf("\n\nQueue is empty.\n");
+    else {
+        printf("\n\n");
+        for(int i=front; i<=rear; i++)
+            printf("\t%d",queue[i]);
+    }
+}

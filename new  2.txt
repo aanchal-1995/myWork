@@ -1,0 +1,18 @@
+open database
+grp by fn, fun(sum) fn 
+SELECT * FROM  Data
+WHERE  Hourly_Data
+LIKE  '%/10/2015%'
+
+WHERE Date LIKE '%/01/14'
+GROUP BY Date
+Lifetime 
+SELECT SUM(Consumption) AS Consumption,SUM(Production) AS Production,SUM(NetConsumption) AS Consumption FROM Data
+Daily
+SELECT SUM(Consumption) AS Consumption,SUM(Production ),Date FROM Data
+WHERE Date LIKE '%/01/15'
+GROUP BY  Date
+YEARLY
+SELECT SUM(Consumption) AS Consumption,SUM(Production ) FROM Data
+WHERE Date LIKE '%/%/14'
+MONTHLY	

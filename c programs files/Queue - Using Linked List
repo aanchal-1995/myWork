@@ -1,0 +1,133 @@
+// P // This is a program to Create a Queue using Linked List and performing Insertion and Deletion.
+// A // Basic Algorithm is to present a Menu for Insert, Delete and Display and asking user for input and performing accordingly.
+//  A queue is a particular kind of abstract data type or collection in which the entities in the collection are kept in order and the principal (or only) operations on the collection are the addition of entities to the rear terminal position, known as enqueue, and removal of entities from the front terminal position, known as dequeue. This makes the queue a First-In-First-Out (FIFO) data structure. In a FIFO data structure, the first element added to the queue will be the first one to be removed.
+
+
+// A // Firstly include the header files into our program. In this we will include one more header file "stdlib.h" because we have to use "exit" function and #define.
+#include <stdio.h>
+#include <stdlib.h>
+
+
+// Defining Prototypes of three functions i.e. Insert, Delete and Display.
+void insert();
+void delete();
+void display();
+
+//
+struct node {
+    int info;
+    struct node *link;
+}*front = NULL, *rear = NULL;
+
+// Declaring global variable "data" that is to store data entered by user to store in Queue.
+int data;
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+int main(void) {
+    
+    // Declaring "ch" which will store the choice entered by user.
+    int ch;
+    
+    // Creating Loop which will present our menu and calling the desired functions.
+    do
+    {
+        printf("\n\n\n\n1.\tInsert\n2.\tDelete\n3.\tDisplay\n4.\tExit\n");
+        printf("\nEnter your choice: ");
+        scanf("%d", &ch);
+        switch(ch) {
+            case 1:
+                insert();
+                break;
+            case 2:
+                delete();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("\n\nInvalid entry. Please try again...\n");
+        }
+    } while(ch!=4);
+    
+    return 0;
+    
+}
+
+// Now coming out of Main function and defining insert() function to insert value in queue.
+void insert() {
+    
+    // We will ask for the Data to be entered.
+    printf("\n\nEnter DATA: ");
+    scanf("%d", &data);
+    
+    // If "rear" is NULL that means the queue is empty.
+    // We will first create a node dynamically using malloc function and assigning "data" into "info" column of it and assign "NULL" to its "link" because we dont have any other node to link.
+    // At last assigning "rear" to "front" as now we have one node in the list.
+    if(rear == NULL)
+    {
+        rear = (struct node *)malloc(sizeof(struct node));
+        rear->info = data;
+        rear->link = NULL;
+        front = rear;
+    }
+    
+    //ELSE : After creating a new node using malloc we will assign "link" of last entered node i.e. "rear" (that will be towards the empty node) to the "rear". Assigning "data" to "info" and NULL to its "link".
+    
+    // At last printing the Data that was inserted.
+    else {
+        rear->link = (struct node *)malloc(sizeof(struct node));
+        rear = rear->link;
+        rear->info = data;
+        rear->link = NULL;
+    }
+        printf("\nData inserted = %d", data);
+    
+}
+
+// After insert() now we will implement Delete operation. In this we have to remove the data which was inserted First time.
+void delete() {
+    
+    // We will create a "ptr" that will store the node that will be deleted.
+    struct node *ptr;
+    
+    // we will first check for the empty queue. If not empty we will then assign "front" to "ptr" as Deletion will take place from "fromt" following "FIFO".
+    // Then assigning "info" of the node that is to be deleted (front) ito "Data" for printing it later.
+    // Then we will assign "link" of "front" to "front", that will de-refer the node and we will free its memory afterwards and printing the deleted value.
+    if(front == NULL)
+        printf("\n\nQueue is empty.\n");
+    else{
+        ptr = front;
+        data = front->info;
+        front = front->link;
+        free(ptr);
+        printf("\nData deleted: %d\n", data);
+        
+        // Before exiting from the function we will check IF "front" is equal to "NULL" then we will mark "rear" as NULL that means queue is Empty.
+        if(front == NULL)
+            rear = NULL;
+    }
+    
+}
+
+// Now for display() function we just have to traverse complete queue showing each value starting from the front.
+void display()
+{
+    // For traversing we will create a "ptr" which will be used to loop through the queue.
+    struct node *ptr = front;
+    
+    // Check for the Empty queue first. If not empty then we will loop through the queue using While loop and printing "info".
+    // For moving ahead we will re-assign "link" of "ptr" to "ptr"
+    if(rear == NULL)
+        printf("\n\nQueue is empty.\n");
+    else {
+        printf("\n\n");
+        while(ptr != NULL)
+        {
+            printf("%d\t",ptr->info);
+            ptr = ptr->link;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Clenegize</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/web.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="Chart.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  
+   <!-- 
+ <nav class="navbar navbar-default navbar-static-top">
+	  <div class="container"> 
+	  <div class="logo">
+	  <a class="navbar-brand" href="#"><img src="logo.png"></a>
+	  </div>
+	  </div>
+	</nav>
+	
+	<nav class="navbar navbar-default navbar-static-top">
+	   <div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav navbar-right">
+		  <li class="active"><a href="#">Dashboard</a></li>
+		  <li ><a href="reference.html">Reference</a></li>
+		  <li ><a href="alerts.html">Alerts</a></li>
+		  <li ><a href="support.html">Supports </a></li>
+		</ul>
+		</div>
+	</nav>
+	
+ -->
+ 
+ <div id="companyHeader">
+<img src="logo.png" style="margin-left:20px;"/>
+</div>
+
+<div id="menu">
+<div  id="supportButton" onclick="location.href='support.html'">SUPPORT</div>
+<div  id="alertButton" onclick="location.href='alerts.html'">ALERTS</div>
+<div  id="profileButton" onclick="location.href='reference.html'">PROFILE</div>
+<div  id="dashboardButton" onclick="location.href='web.html'" style="background-color:#00b050">DASHBOARD</div>
+</div>
+
+
+	    <div class="row" style="margin-left:-40px; margin-right:-40px">
+		    <div class="panel">
+			<div class="panel-body">
+			
+			    <div class="col-xs-3" style="background-color:#404040; ">
+				 
+				      <div class="conspt">
+					  <div class="text">CONSUMPTION</div>
+					  <div class="doughnut">dvbbv</div>
+	                  </div>
+
+<!-- 
+	 <div class="col-xs-6" style="font-size:15px; color:grey; padding:50px 40px;">CONSUMPTION</div>
+  <div class="col-xs-6"><div class="doughnut"></div></div>	
+ -->			  
+					
+				 <div class="solar"><div class="text">SOLAR <BR>PRODUCTION</div><div class="doughnut">dvbbv</div></div>
+				 <div class="grid"><div class="text">EXTRA SENT TO <BR>GRID</div><div class="doughnut">dvbbv</div></div>
+				 <div class="energy"><div class="text">GREEN<br>ENERGY %</div><div class="doughnut">dvbbv</div></div>
+				</div>
+				<div class="col-xs-7">
+				
+				<div style="border:2px solid black; min-height:350px; margin-top:50px">
+				
+				</div>
+				<!-- 
+<div class="medcol">
+                   <div class="panel panel-default">
+					    <div class="panel-body">
+			      			<div id="graph">
+ -->
+<!-- 
+				    <div class="indicators"><i class="fa fa-square-o fa-lg" style="background-color:grey;"></i>house usage
+					<i class="fa fa-square-o fa-lg" style="background-color:yellow;">
+					</i>solar usage</div>
+ -->
+				    <!-- 
+<div class="pull-right" style="margin-right:18px;">
+				    <button type=button class="btn btn-default btn-sm">Default</button>
+					</div>
+ -->
+							<!-- 
+</div>
+			 			</div>
+					 </div>
+			 	</div>
+ -->
+		
+		<div id="bottomButtons" style="width:100%; text-align:center; margin-top:20px">
+<div  id="supportButton" onclick="supportClick()"><button class="incDecButtons"></button>SUPPORTSUPPORT<button class="incDecButtons"></button></div>
+<div  id="supportButton" onclick="supportClick()">SUPPORT</div>
+<div  id="alertButton" onclick="alertClick()">ALERTS</div>
+<div  id="profileButton" onclick="profileClick()">PROFILE</div>
+<div  id="dashboardButton" onclick="dashboardClick()" style="background-color:#00b050">DASHBOARD</div>
+</div>
+	
+  <!-- 
+ <center> <div class="bottombar">
+				<!~~ 
+<div class="lngbtn">
+				<div><button style="font-size:11px"><i class="fa fa-angle-left fa-2x"></i></button> </div>
+				<div><button type=button class="btn btn-default btn-sm" style="width:100px">Default</button></div>
+				<div><button style="font-size:11px"><i class="fa fa-angle-right fa-2x"></i> </button></div>
+				</div>
+ ~~>
+ 				<div>Hello</div>
+				<button type=button class="btn btn-default btn-sm">Default</button>
+				<button type=button class="btn btn-default btn-sm">Default</button>
+				<button type=button class="btn btn-default btn-sm">Default</button>
+				<button type=button class="btn btn-default btn-sm">Default</button>
+				
+				</div></center>
+ -->
+ 
+			 </div>
+				<div class="col-xs-2" style="background-color:#f2f2f2;">
+				<div class="ryttxt">
+				  <div class="bill">BILL SAVINGS </div></div>
+				  <div class="billrt"><div style="font-size:34px;padding-left:24px;font-weight:bold;"><i class="fa fa-inr "></i> 200.0</div></div>
+				  <div class="save">ENVIRONMENT SAVINGS </div>
+				 <div class="co"> <div class="value" ><div class="noval">44 KG</div><div class="imgicon" ><img src="co2.png" style="height:50px;width:50px;"/></div></div></div>
+				  <div class="car"><div class="value"><div class="noval">230 KM</div><div class="imgicon"><img src="car.png" style="height:50px;width:50px;" /></div></div></div>
+				</div>
+				
+			 </div>
+			</div>
+		</div>
+	
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+
+<script>
+function supportClick() {
+    document.getElementById("supportButton").style.backgroundColor = "#00b050";
+    document.getElementById("alertButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("profileButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("dashboardButton").style.backgroundColor = "#B0B0B0";
+}
+
+function alertClick() {
+    document.getElementById("supportButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("alertButton").style.backgroundColor = "#00b050";
+    document.getElementById("profileButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("dashboardButton").style.backgroundColor = "#B0B0B0";
+}
+
+function profileClick() {
+    document.getElementById("supportButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("alertButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("profileButton").style.backgroundColor = "#00b050";
+    document.getElementById("dashboardButton").style.backgroundColor = "#B0B0B0";
+}
+
+function dashboardClick() {
+    document.getElementById("supportButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("alertButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("profileButton").style.backgroundColor = "#B0B0B0";
+    document.getElementById("dashboardButton").style.backgroundColor = "#00b050";
+}
+</script>
+  </body>
+</html>

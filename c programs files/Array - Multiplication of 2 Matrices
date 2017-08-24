@@ -1,0 +1,172 @@
+// P // This is a program to Mutiply two 2-D Arrays (Multiplication of two Matrices).
+// A // Basic Algorithm is to ask elements for two 2-D Array then multiplying both into third 2-D Array.
+
+// A // Firstly include the header files into our program.
+// P //
+#include <stdio.h>
+
+// A // Initializing three Arrays, two for the elements entered by user and one to store the Multiplication matrix.
+//m,n - For number of rows and columns of first matrix (to be entered by user)
+//x,y - For number of rows and columns of second matrix (to be entered by user)
+// P //
+int a[10][10], b[10][10], c[10][10], m, n, x, y;
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+int main(void) {
+    
+    // A // Initializing i and j, to be used as Index for rows and columns resp. in loop.
+    // P //
+    int i, j;
+    
+    // A // Ask user for Number of Rows,Columns and Elements of two matrices/arrays and using nested loops for scanning values.
+    // P //
+    printf("\nEnter number of rows & cols of array A: ");
+    scanf("%d%d", &m, &n);
+    
+    
+    printf("\nEnter elements of array A:\n");
+    for(i=0; i<m; i++)
+        for(j=0; j<n; j++)
+            scanf("%d", &a[i][j]);
+    
+    
+    printf("\nEnter number of rows & cols of array B: ");
+    scanf("%d%d", &x, &y);
+    
+    
+    printf("\nEnter elements of array B:\n");
+    for(i=0; i<x; i++)
+        for(j=0; j<y; j++)
+            scanf("%d", &b[i][j]);
+    
+    // A // Now Print both the Matrices/Array.
+    // P //
+    printf("\n\nArray A:\n\n");
+    for(i=0; i<m; i++)
+    {
+        for(j=0; j<n; j++)
+            printf("\t%d", a[i][j]);
+        printf("\n\n");
+    }
+    
+    
+    printf("\n\nArray B:\n\n");
+    for(i=0; i<x; i++)
+    {
+        for(j=0; j<y; j++)
+    
+            printf("\t%d", b[i][j]);
+        printf("\n\n");
+    }
+    
+    // A // Now we will check whether the Multiplication is possible or not. For this we will check if row count of Array 1 is equal to Array 2 and also for column count.
+    // If one of the condition fails we will print a message.
+    // P //
+    if(m!=x || n!=y)
+    {
+        printf("\nMultiplication is not possible.");
+        
+    }
+   
+    // A // If conditions are true then we will perform Multiplication. (else block)
+    // P //
+    else{
+    for(i=0; i<m; i++)
+        for(j=0; j<n; j++)
+            c[i][j] = a[i][j] * b[i][j];
+    
+    // A // Inside Else block after Multiplication we will print the third array which contain the addition matrix.
+    // P //
+    printf("\n\nArray after Multiplication:\n\n");
+    for(i=0; i<m; i++)
+    {
+        for(j=0; j<n; j++)
+            printf("\t%d", c[i][j]);
+        printf("\n\n");
+    }
+    }
+    return 0;
+}
+
+
+/*
+#include <stdio.h>
+
+int a[10][10], b[10][10], c[10][10], m, n, x, y;
+
+
+int main(void) {
+    
+    // A //
+    // P //
+    int i, j;
+    
+    // A //
+    // P //
+    printf("\nEnter number of rows & cols of array A: ");
+    scanf("%d%d", &m, &n);
+    
+    
+    printf("\nEnter elements of array A:\n");
+    for(i=0; i<m; i++)
+        for(j=0; j<n; j++)
+            scanf("%d", &a[i][j]);
+    
+    
+    printf("\nEnter number of rows & cols of array B: ");
+    scanf("%d%d", &x, &y);
+    
+    
+    printf("\nEnter elements of array B:\n");
+    for(i=0; i<x; i++)
+        for(j=0; j<y; j++)
+            scanf("%d", &b[i][j]);
+    
+    // A //
+    // P //
+    printf("\n\nArray A:\n\n");
+    for(i=0; i<m; i++)
+    {
+        for(j=0; j<n; j++)
+            printf("\t%d", a[i][j]);
+        printf("\n\n");
+    }
+    
+    
+    printf("\n\nArray B:\n\n");
+    for(i=0; i<x; i++)
+    {
+        for(j=0; j<y; j++)
+            
+            printf("\t%d", b[i][j]);
+        printf("\n\n");
+    }
+    
+    // A //
+    // P //
+    if(m!=x || n!=y)
+    {
+        printf("\nMultiplication is not possible.");
+        
+    }
+    
+    // A //
+    // P //
+    else{
+        for(i=0; i<m; i++)
+            for(j=0; j<n; j++)
+                c[i][j] = a[i][j] * b[i][j];
+        
+        // A //
+        // P //
+        printf("\n\nArray after Multiplication:\n\n");
+        for(i=0; i<m; i++)
+        {
+            for(j=0; j<n; j++)
+                printf("\t%d", c[i][j]);
+            printf("\n\n");
+        }
+    }
+    return 0;
+}*/

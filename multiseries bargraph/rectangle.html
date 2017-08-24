@@ -1,0 +1,49 @@
+<html>
+ <head>
+   <script>
+      window.onload = function()
+	  { 
+	       var canvas = document.getElementById('myCanvas');
+		   {
+		   var ctx=canvas.getContext('2d');
+		   
+		   var scores=[100,90,85,45,72,88];
+		   
+		   var width=20;
+		   var currX=50;
+		   var base=200;
+		   
+		   ctx.fillStyle='green';
+		   for(var i=0;i<scores.length;i++)
+		   {
+		   var h=scores[i];
+		  
+		   ctx.fillRect(currX,canvas.height-h,width,h);
+		  
+		   
+		   currX+=width+30;
+		   }
+		   }
+		   {
+		        var con=canvas.getContext('2d');
+		         var mark =[90,68,87,34,20,45];
+                 var width=20;
+				 var curX=70;
+				 var base=200;
+				 
+				 con.fillStyle='yellow';
+				 for(var j=0;j<mark.length;j++)
+                  { 
+				  var  k=mark[j];
+				  con.fillRect(curX ,canvas.height-h,width,h);
+				  curX+=width+30;
+				  }		   
+		   }
+		   
+	   };
+	  </script>
+	 </head>
+<body>
+ <canvas id = "myCanvas" width="400" height="200" />
+</body>
+</html>

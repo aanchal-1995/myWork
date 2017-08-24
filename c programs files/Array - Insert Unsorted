@@ -1,0 +1,90 @@
+// P // This is a program to Insert an element into an SORTED array.
+// A // Basic Algorithm is to ask the position of element from user and then shifting the elements back till that location inserting an element at that position.
+
+// 1 // Firstly include the header files into our program.
+// P //
+#include <stdio.h>
+
+// 2 // Now we give the Function Prototype of our "insert_unsorted()".
+// P //
+void insert_unsorted();
+
+// 3 // Initializing Global variables i.e. with the scope all over the program.
+ - int numbers[50] - Initialise an array named "numbers" which can contain upto 50 elements.
+ - size - Variable used for storing number of elements we want to enter.
+ - item - An element that is to be inserted.
+ - loc - To store the location where we want to insert that element.
+// P //
+int numbers[50], size, loc, item;
+
+// 4 // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { // Statements
+return 0;
+}
+int main(void) {
+    
+    // 5 // Initialize i to 0 - To be used in Loop
+    // P //
+    int i = 0;
+    
+    // 6 // Take an input from user about the size of array.
+    // P //
+    printf("\nEnter size of an array: ");
+    scanf("%d", &size);
+    
+    // 7 // Now ask the user to enter the elements in an array. Loop is used to store numbers into an array and i is used as an Index value.
+    // P //
+    printf("\nEnter elements of an array:\n");
+    for(i=0; i<size; i++)
+        scanf("%d", &numbers[i]);
+    
+    // 8 // Now ask the user about the Location where the number has to be inserted.
+    // P //
+    printf("\nEnter location of insertion: ");
+    scanf("%d", &loc);
+    
+    // 9 // Ask user for the Item to be inserted in an array
+    // P //
+    printf("\nEnter ITEM to insert: ");
+    scanf("%d", &item);
+    
+    // 10 // Call the function "insert_unsorted"
+    // P //
+
+    insert_unsorted();
+    
+    // 11 // Now after the function calling we will print the array with the element insert into it.
+    // P //
+    printf("\n\nAfter insertion:\n");
+    for(i=0; i<size; i++)
+        printf("\n%d", numbers[i]);
+    
+    return 0;
+}
+
+// 12 // Now we will come out of the Main block and Define our function.
+// P // void insert_unsorted() {
+// Statements
+}
+void insert_unsorted()
+{
+    // 13 // Inside function, Initialize i with size - 1 (Reason for (-1): As index in array starts from 0.
+    // P //
+    int i=size-1;
+    
+    // 14 // Looping through index from the last index to the one provided by user and shifting the elements backward.
+    // P //
+    while(i>=loc-1)
+    {
+        numbers[i+1] = numbers[i];
+        i--;
+    }
+    
+    // 15 // On termination of our loop we will insert the element at the index = loc - 1. Again the reason for -1 is Zero Indexed nature of Arrays.
+    // P //
+    numbers[loc-1] = item;
+
+    // 16 //At last we are incrementing the size because after inserting the size of the array is incremented.
+    // P //
+    size++;
+}

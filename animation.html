@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <style>
+     #myCanvas {
+         border: 1px solid black;
+     }
+ </style>
+ <script>
+   var canvas, ctx;
+    var RectangleX=0;
+	var colors=['red','blue','green'];
+	var currentColor=0;
+	var speed=3;
+   function init() {
+     canvas = document.getElementById('myCanvas');
+     ctx=canvas.getContext('2d');
+     requestAnimationFrame(animate);
+	 setInterval(changeColor,1000);
+   }
+   function animate() {
+     ctx.clearRect(0,0,canvas.width,canvas.height);
+     ctx.fillRect(RectangleX,0,80,100);
+	 RectangleX=RectangleX+speed;
+	 if((RectangleX+80>200)||(RectangleX<=0)){
+	 speed=-speed;}
+	 requestAnimationFrame(animate);
+   }
+   function changeColor(){
+     ctx.fillStyle=colors[currentColor%3];
+	 currentColor+=1;
+	 //speed+=Math.sign(speed)*1;
+	 console.log("speed="+speed);
+   }
+   function changeSize(event){
+      size=event.target.value;
+   }
+ </script>
+ </head>
+<body onload="init();">
+    <canvas id="myCanvas" width="200" height="200">
+            Your browser does not support the canvas tag.
+    </canvas>
+	<p>
+	  <label for="size">Size:</label><input id="size" type="range" min=1 max=80 value=20
+	  oninput ="changeSize(event)">
+	<output id="sizeValue">20</output>
+	</p>
+</body>
+</html>

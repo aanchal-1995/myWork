@@ -1,0 +1,55 @@
+// P // This is a program to sort Array in Ascending order.
+// A // Basic Algorithm is to ask elements of Arrays then swapping the elements to get sorted array.
+
+// A // Firstly include the header files into our program.
+// P //
+#include <stdio.h>
+
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+
+int main(void){
+    
+    // A // Initilizing array,to store user inputed elements.
+    // size - to Store number of elements in array.
+    // i,j,k - To be used as index while shifting elements in an array.
+    // temp - to be used for swapping the numbers
+    
+    int i, j, temp, size, numbers[30];
+    
+    // A // Ask user for Size and elements for array.
+    // P //
+    printf("\nEnter the number of elements:");
+    scanf("%d", &size);
+    printf("\nEnter the numbers: ");
+    for (i = 0; i < size; ++i)
+        scanf("%d", &numbers[i]);
+    
+    // A // Loop through the array and Inside the loop we will check for swapping numbers.
+    // P //
+    for (i = 0; i < size; ++i)
+    {
+        
+        // A // Inside the Loop we will apply another loop that will be used to compare the element with higher index. (For Instance: First number is compared with Second Number and so on.
+        for (j = i + 1; j < size; ++j)
+        {
+            
+            // A // Now Inside the second loop we will perform check, if the element with lower index is greater than the element with higher index it is swapped using temp variable.
+            if (numbers[i] > numbers[j])
+            {
+                temp =  numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+    }
+    
+    // A // At Last printing the elements of Sorted array using Loop.
+    // P //
+    printf("Sorted Array\n");
+    for (i = 0; i < size; ++i)
+        printf("%d\n", numbers[i]);
+    
+    return 0;
+}

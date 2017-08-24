@@ -1,0 +1,197 @@
+ <html>
+ <head>
+ <title>JS</title>
+ <script>
+        /*alert("Hello WOrld");
+        prompt("Whats ur name");
+        document.getElementById('test').innerHTML="HelloWorld";
+		console.log("hello World ttoo   ");
+		var name=prompt("What is ur name"); 
+		document.write(name);
+		console.log(name);
+		alert(name);
+		*/
+		/*var name= prompt("enter ur name");
+		document.write(name);
+		document.write("<h1>"+name+"<h1>");
+		document.write(document.baseURI+"<br>");
+		document.write(document.title+"<br>");
+		var pars = document.getElementsByTagName('p');
+		document.write(pars+"<br/>");
+		document.write(pars.length);*/
+		 /*var x="hello";
+		welcomeMsg(x);
+		var x="goodbye";
+		welcomeMsg(x);
+		function welcomeMsg(msg){
+		alert(msg);
+		}*/
+		/*function welcomeMsg(msg){
+		   alert(msg);
+		   var name = prompt("enter ur name");
+		   return name;
+		}
+		var firstName=welcomeMsg("hii");
+		document.write(firstName);
+		*/
+		/*function message(msg){
+		    document.getElementById('output').innerHTML=msg+"event";
+		}*/
+		/*function displayDate(){
+		    document.getElementById("demo").innerHTML=Date(); 
+		}*/
+		/*function closeMe(){
+		     x=document.getElementById("demo");
+        	//x.style.display="none";
+			x.className="closed";
+         } 
+        function openMe(){
+		     x=document.getElementById("demo");
+        	//x.style.display="block";
+			x.className="open";
+         } */
+         /*function displayId(element){
+		    console.log(element.id);
+		 }	*/
+		 /*var fruits=["banana","orange","apple","mango"];
+		 function loadFruits(){
+		    document.getElementById("fruits").innerHTML=fruits;
+		 }
+		 function myFunction(){
+		    var fruit=prompt("what is ur fav fruit?");
+			fruits[fruits.length]=fruit;
+			document.getElementById("fruits").innerHTML=fruits;
+		 }
+		 */
+		 /*var name=prompt("what is ur name?");
+		 if(name.length!=0){
+		 if(name=="anchuu")
+		 document.write("what a beautiful name");
+		 else
+		 document.write("hello "+name);}
+		 else {
+		 document.write("feeling shy?");}*/
+		 /*var name=prompt("what is ur name?");
+		 if(name.length!=0 && name == "anchuu")
+		 document.write("what a beautiful name");
+		 if(name.length!=0 &&  name!="anchuu")
+		 document.write("hello "+name);
+		if(name.length==0)
+		 document.write("feeling shy?");*/
+		 /*var grades=[2,5,,,8,9,,8];
+		 var sum =0;
+		 if (grades.length>0){
+		 for(index=0;index<grades.length;index++){
+		 if(grades[index]!=undefined)
+		 {sum+=grades[index];
+		 count+=1;}}
+		 document.write(sum/grades.length);
+		 }
+		 else document.write("empty array");
+		 */
+		 /*function check(){
+		    var email1=document.getElementById('email_addr');
+			var email2=document.getElementById('email_repeat');
+			if(email1.value!=email2.value){
+			   alert("the two emails must match!!");
+			   return false;
+			}
+		 }*/
+     </script> 
+	 <!--<style>
+	    .closed{
+		    display:none;
+		}
+		.open{
+		    display:block;
+		}
+	 </ style>-->
+	 
+ </head>
+ <body ><!--onload="loadFruits()"-->
+     <!--onload="message('LOAD')" onresize="message('RESIZE')"-->
+     <!--<h1 id="test">Tester </h1>
+	 <h1 id="test">Tester </h1> -->
+     <!--<p>
+	    what happens if uh have 2 elements with id="test "?;
+	 </p>-->
+	 <!-- <h1>Javascript Events - Responsing to Events </h1>
+	  <p onclick="message('CLICK')">It is possible to call functions
+	  based on Events </p>
+	  <p> click on the paragrapgh above to trigger on <em>onclick</em>
+	  event.Reload the page to see an onload event</p>
+	  <p id="output"></p>-->
+	  <!--<h1>javascript date function</h1>
+	  <p id="demo">this is paragraph</p>
+	  <button type="button" onclick ="displayDate()">Display 
+	  </button>-->
+	  <!--<h1> Modify the Dom </h1>
+	  <button onclick ="document.getElementById('stuff').innerHTML=
+	  'Clicked First Button';">First</button>
+	  <button onclick ="document.getElementById('stuff').innerHTML=
+	  'Clicked Second Button';">Second</button>
+	  <p>This code shouldnt change.</p>
+	  <p id="stuff">This will change.</p>
+	  <p>This code shouldnt change.</p>--> 
+	 
+      <!-- <button onclick ="openMe()">Open!</button>
+	   <button onclick ="closeMe()">Close!</button>
+	    <p id="demo">extra details...bwrvworvhblwbvcsdv vdlwkbvk
+	  v wdvlvb </p>-->
+	 
+	  <!--<img src="code.jpg" alt="code" id="ID1"
+	  onclick="console.log(this.alt)">
+	  <div onclick ="console.log(this.innerHTML)"  >Another div</div>
+	  <hr>
+	   <img src="code.png" alt="icon" id="ID1" onclick="displayId(this)">
+	  <div id="ID2" onclick ="displayId(this)">first div</div>
+	  -->
+	  <!--<button onclick="myFunction()">Add ut fav!!</button>
+	  <p id="fruits"></p>-->
+	  <!--<form>
+	     <label for ='name'>Name</label>
+		 <input type ='text' id='name' name='name'><br/><br/>
+		 <label >Email:<input type='email' name='email'></label><br/><br/>
+		 <label for ='birth'>Birth</label>
+		 <input type ='date' id='birth' value='birth'><br/><br/>
+		 <input type='submit' value='Click Here'>
+	  </form>-->
+	  <!--<form> zip code with pattern : <input type="text" name="zip_codeP"
+	      pattern="[0-9]{5}" required> <br/><br/>
+		   zip code with number: <input type="number" name="zip_codeN"
+	     min ="00000"max="99999" required> <br/><br/>
+		  <input type='submit' value='Click Here'>
+      </form>-->
+	   <!--<form>
+	      <label>Preferred email address:
+		     <input type="email" id="email_addr" name ="email1" value="me@me.com" required>
+		  </label>
+		  <label>Repeat email address:
+		     <input type="email" id="email_repeat" name ="email2" required onchange="return check()" >
+		  </label>
+		  <input type='submit' value="confirm Email!"
+		  onclick="return check();">
+	   </form>-->
+	   <!--<form>
+	        favorite foods<br/>
+			<label ><input type="checkbox" name="food" value="pizza">
+			Pizza</label><br/>
+			<label ><input type="checkbox" name="food" value="chips">
+			chips</label><br/>
+			<label ><input type="checkbox" name="food" value="kale">
+			kale</label><br/>
+			<input type="submit">
+		<form>-->
+		<form>
+	       
+			<label ><input type="radio" name="food" value="pizza">
+			Pizza</label><br/>
+			<label ><input type="radio" name="food" value="chips">
+			chips</label><br/>
+			<label ><input type="radio" name="food" value="kale">
+			kale</label><br/>
+			<input type="submit">
+		<form>
+		
+ </body>
+ </html>

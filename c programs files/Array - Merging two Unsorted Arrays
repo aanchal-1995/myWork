@@ -1,0 +1,54 @@
+// P // This is a program to Merge two Unsorted Arrays.
+// A // Basic Algorithm is to ask elements for two Arrays then merging both into third Array.
+
+// A // Firstly include the header files into our program.
+// P //
+#include <stdio.h>
+
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+
+
+int main(void) {
+    
+    // A // Initilizing three arrays, two to store user inputed elements and third will store the merged array.
+    // size_of_first, size_of_second - Number of elements in first and second array respectively.
+    // index - To be used as index while scanning input from user.
+    // i,j,k - To be used as index while merging for first,second and third array resp.
+    // P //
+    int first[50], second[50], merge[100], size_of_first, size_of_second,index, i, j, k=0;
+    
+    // A // Ask user for Size and elements for both arrays.
+    // P //
+    printf("\nEnter size of array A: ");
+    scanf("%d", &size_of_first);
+    printf("\nEnter elements of array A:\n");
+    for(index=0; index<size_of_first; index++)
+        scanf("%d", &first[index]);
+    printf("\nEnter size of array B: ");
+    scanf("%d", &size_of_second);
+    printf("\nEnter elements of array B:\n");
+    for(index=0; index<size_of_second; index++)
+        scanf("%d", &second[index]);
+    
+    // A // Loop through first array and store all its values in the Merge array.
+    // P //
+    for(i=0; i<size_of_first; i++)
+        merge[i] = first[i];
+    
+    // A // Loop through second array (using k as Index) and store all its values in the Merge array starting for index equal to size_of_first to merge the elements of Second array after the elements of first array.
+    // P //
+    for(j=size_of_first; j<size_of_first+size_of_second; j++)
+    {
+        merge[j] = second[k];
+        k = k+1;
+    }
+    
+    // A // At Last printing the elements of Merge array using Loop.
+    // P //
+    printf("\nAfter merging:\n");
+    for(index=0; index<size_of_first+size_of_second; index++)
+        printf("\n%d", merge[index]);
+    return 0;
+}

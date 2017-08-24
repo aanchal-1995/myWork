@@ -1,0 +1,107 @@
+// P // This is a program to Create a Stack using Array and performing Pop and Push.
+// A // Basic Algorithm is to present a Menu for Push, Pop and Display and asking user for input and performing accordingly.
+// Stack or LIFO (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations
+// - Push adds an element to the collection;
+// - Pop removes the last element that was added.
+//The term LIFO stems from the fact that, using these operations, the first element "popped off" a stack in series of pushes and pops is the last element that was pushed in the sequence.
+
+// A // Firstly include the header files into our program. In this we will include one more header file "stdlib.h" because we have to use "exit" function and #define.
+#include <stdio.h>
+#include <stdlib.h>
+
+// Using Macro define MAX as 50 this will be the maximum size of our stack.
+#define MAX 50
+
+// Defining Prototypes of three functions i.e. Push, Pop and Display.
+void push();
+void pop();
+void display();
+
+// Declaring array of MAX lenght, "top" which will point to the Top of Array where operations are to be performed and "data" that is to store data entered by user to store in stack.
+int stack[MAX];
+int top = -1, data;
+
+// A // main function with Int as return type and no arguments and Now we will work inside Main()
+// P // int main(void) { return 0; }
+int main(void) {
+    
+    // Declaring "ch" which will store the choice entered by user.
+    int ch;
+    
+    // Creating Loop which will present our menu and calling the desired functions.
+    do
+    {
+        printf("\n\n\n\n1.\tPush\n2.\tPop\n3.\tDisplay\n4.\tExit\n");
+        printf("\nEnter your choice: ");
+        scanf("%d", &ch);
+        switch(ch) {
+            case 1:
+                push();
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("\n\nInvalid entry. Please try again...\n");
+        }
+    } while(ch!=4);
+    
+    return 0;
+
+}
+
+// Now coming out of Main function and defining push() function to insert value in stack.
+void push() {
+    
+    // Inside push function we will first check if our stack is full or not.
+    // If TOP is equal to Maximum value - 1 then stack is full.
+    // (-1) is done because of zero indexed nature of arrays.
+    if(top == MAX-1)
+        printf("\n\nStack is full.");
+   
+    // Else, if we have space in Stack then we will insert in Stack.
+    else {
+        
+        // Now ask user for the data to be entered in the stack.
+        printf("\n\nEnter Data: ");
+        scanf("%d", &data);
+        
+        // Increment our "top" pointer to point towards the next memory location index of array to store data, and assign "data" to that location.
+        top++;
+        stack[top] = data;
+        printf("\n\\Data inserted = %d", data);
+    }
+}
+
+// After push() now we will implement Pop operation. In this we have to remove the latest entered data i.e. lying on the top of stack.
+void pop() {
+    
+    //First we will check for the top pointer if it is -1 that means our Stack is Empty then we will show message.
+    if(top == -1)
+        printf("\n\nStack is empty.");
+    
+    // Else we will first store the value/data lying on top of stack into variable and then decrementing "top".
+    else {
+        data = stack[top];
+        top--;
+        printf("\n\nData deleted = %d", data);
+    }
+
+}
+
+// Now for display() function we just have to traverse complete stack showing each value starting from the top.
+void display()
+{
+
+    // First we will check for empty stack. If not empty we will loop through the array - "stack" and printing values.
+    if(top == -1)
+        printf("\n\nStack is empty.");
+    else {
+        for(int i=top; i>=0; i--)
+            printf("\n%d", stack[i]);
+    }}
